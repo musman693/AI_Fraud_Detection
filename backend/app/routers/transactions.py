@@ -4,9 +4,8 @@ Requires JWT auth. Role-based access enforced per endpoint.
 """
 from __future__ import annotations
 from typing import Annotated, Optional
-import io
-
-from fastapi import APIRouter, Depends, File, Form, Query, Request, UploadFile, status
+from datetime import datetime
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, Request, UploadFile, status
 
 from app.core.dependencies import DBSession, CurrentUser, require_roles
 from app.models.user import UserRole
@@ -49,7 +48,6 @@ async def list_transactions(
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
 ):
-    from datetime import datetime
     filters = TransactionFilterParams(
         customer_id=customer_id,
         risk_label=risk_label,  # type: ignore
@@ -129,19 +127,19 @@ async def import_csv(
     content = await file.read()
     df = parse_csv_bytes(content, file.filename or "upload.csv")
 
-    # Enqueue Celery task
-    from app.workers.tasks import process_csv_import
-    task = process_csv_import.delay(
-        job_id="placeholder",  # will be updated below
-        csv_content_str=content.decode("utf-8", errors="replace"),
-        user_id=current_user.id,
-    )
-
     job = await create_import_job(
         db, filename=file.filename or "upload.csv",
         total_rows=len(df), user_id=current_user.id,
-        celery_task_id=task.id,
     )
+
+    # Enqueue Celery task with actual job.id
+    from app.workers.tasks import process_csv_import
+    task = process_csv_import.delay(
+        job_id=str(job.id),
+        csv_content_str=content.decode("utf-8", errors="replace"),
+        user_id=current_user.id,
+    )
+    job.celery_task_id = task.id
 
     await log_action(
         db, action=AuditAction.CSV_IMPORT_STARTED,
@@ -160,7 +158,6 @@ async def import_csv(
     summary="Check CSV import job status",
 )
 async def get_import_job(job_id: str, db: DBSession, current_user: CurrentUser):
-    from fastapi import HTTPException
     result = await db.execute(select(CSVImportJob).where(CSVImportJob.id == job_id))
     job = result.scalar_one_or_none()
     if not job:

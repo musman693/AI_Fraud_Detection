@@ -3,6 +3,7 @@ routers/external.py — External-facing Transaction API.
 Authenticated via X-API-Key header. Rate-limited via slowapi.
 These endpoints are what outside businesses call.
 """
+from datetime import datetime, timezone
 from fastapi import APIRouter, HTTPException, Request, status
 from slowapi import Limiter
 from slowapi.util import get_remote_address
@@ -51,7 +52,6 @@ async def submit_transaction(
     )
 
     # Update API key last_used
-    from datetime import datetime, timezone
     api_key.last_used_at = datetime.now(timezone.utc)
 
     await log_action(
@@ -108,7 +108,7 @@ async def risk_check(
     db: DBSession,
     api_key: ValidAPIKey,
 ):
-    api_key.last_used_at = __import__("datetime").datetime.now(__import__("datetime").timezone.utc)
+    api_key.last_used_at = datetime.now(timezone.utc)
 
     risk_response = await run_detection_pipeline(req)
 

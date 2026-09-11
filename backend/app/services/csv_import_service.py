@@ -67,7 +67,7 @@ def parse_csv_bytes(content: bytes, filename: str) -> pd.DataFrame:
 
 
 async def create_import_job(
-    db: AsyncSession, filename: str, total_rows: int, user_id: str, celery_task_id: str
+    db: AsyncSession, filename: str, total_rows: int, user_id: str, celery_task_id: Optional[str] = None
 ) -> CSVImportJob:
     job = CSVImportJob(
         created_by_user_id=user_id,
