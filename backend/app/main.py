@@ -1,5 +1,6 @@
+
 """
-main.py — FastAPI application factory for Module 1.
+main.py — FastAPI application factory for Module 1 & Module 3.
 """
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
@@ -14,6 +15,7 @@ from app.core.database import engine, Base
 from app.routers.auth import router as auth_router
 from app.routers.transactions import router as transactions_router
 from app.routers.external import router as external_router, limiter
+from app.routers.module3_router import router as module3_router
 
 
 # ── Lifespan ──────────────────────────────────────────────────────────────────
@@ -33,18 +35,14 @@ def create_app() -> FastAPI:
         title=settings.APP_NAME,
         version=settings.APP_VERSION,
         description="""
-## AI Fraud & Risk Detection Platform — Module 1
+## AI Fraud & Risk Detection Platform
 
-**Module 1** provides:
 - 🔐 JWT authentication with role-based access control (Admin, Business Manager, Analyst)
 - 💳 Full transaction management: create, import (CSV), search/filter, detail view
 - 🌐 External-facing transaction API for business partners
 - ⚡ Real-time fraud detection pipeline integration
 - 📋 Immutable audit logging
-
-**Authentication:**
-- Internal dashboard: `Authorization: Bearer <access_token>`
-- External API: `X-API-Key: sk_<your_key>`
+- 🚨 Fraud Alerts, Investigations, Customer Risk Profiles, and Network Graphs
         """,
         docs_url="/docs",
         redoc_url="/redoc",
@@ -80,13 +78,14 @@ def create_app() -> FastAPI:
     app.include_router(auth_router)
     app.include_router(transactions_router)
     app.include_router(external_router)
+    app.include_router(module3_router)
 
     # ── Health check ───────────────────────────────────────────────────────────
     @app.get("/health", tags=["Health"], summary="Health check")
     async def health_check():
         return {
             "status": "healthy",
-            "service": "module1-auth-transactions",
+            "service": "module1-and-module3-service",
             "version": settings.APP_VERSION,
         }
 
