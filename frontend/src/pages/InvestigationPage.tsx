@@ -17,7 +17,7 @@ function fmtAmount(amount: number, currency: string) {
 
 function SectionCard({ title, subtitle, children }: { title: string; subtitle?: string; children: React.ReactNode }) {
   return (
-    <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+    <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
       <h2 className="font-semibold mb-1">{title}</h2>
       {subtitle && <p className="text-xs text-slate-500 mb-3 dark:text-slate-400">{subtitle}</p>}
       {children}

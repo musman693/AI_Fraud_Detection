@@ -107,7 +107,7 @@ export default function FraudNetworkPage() {
             other customers — ranked by risk. Click a ring to see the full Customer → Device → IP → Transaction →
             Location graph.
           </p>
-          <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden mb-8 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+          <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden mb-8 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
             {rings === null ? (
               <p className="text-slate-400 p-6 dark:text-slate-500">Loading...</p>
             ) : (
@@ -134,7 +134,7 @@ export default function FraudNetworkPage() {
                   This ring is large — the graph below has been truncated to keep it readable.
                 </p>
               )}
-              <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+              <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
                 <FraudNetworkLegend />
                 {graph.nodes.filter((n) => n.type === "customer").length > 1 ? (
                   <FraudNetworkGraph

@@ -66,7 +66,7 @@ export default function ApiKeysPage() {
             Copy it now — for security, it will never be shown again.
           </p>
           <div className="flex items-center gap-2">
-            <code className="flex-1 bg-white border border-amber-200 rounded-lg px-3 py-2 text-sm font-mono break-all dark:bg-[#0b0e1c] dark:border-amber-500/30 dark:text-slate-100">
+            <code className="flex-1 bg-white border border-amber-200 rounded-lg px-3 py-2 text-sm font-mono break-all dark:bg-[#17261f] dark:border-amber-500/30 dark:text-slate-100">
               {justCreated.api_key}
             </code>
             <button
@@ -85,7 +85,7 @@ export default function ApiKeysPage() {
         </div>
       )}
 
-      <form onSubmit={handleCreate} className="bg-white border border-primary-100/70 rounded-xl p-4 mb-6 flex items-end gap-3 dark:bg-[#141a2e] dark:border-white/10">
+      <form onSubmit={handleCreate} className="bg-white border border-primary-100/70 rounded-xl p-4 mb-6 flex items-end gap-3 dark:bg-[#17261f] dark:border-white/10">
         <div className="flex-1">
           <label className="block text-xs font-medium text-slate-500 mb-1 dark:text-slate-400">Business / System Name</label>
           <input
@@ -101,7 +101,7 @@ export default function ApiKeysPage() {
       </form>
       {error && <p className="text-red-600 text-sm mb-4 dark:text-red-400">{error}</p>}
 
-      <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+      <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
         <table className="w-full text-sm">
           <thead className="bg-slate-50 text-slate-500 text-left dark:bg-white/5 dark:text-slate-400">
             <tr>

@@ -89,7 +89,7 @@ export default function RulesPage() {
       </div>
 
       {showForm && (
-        <form onSubmit={handleCreate} className="bg-white border border-primary-100/70 rounded-xl p-4 mb-6 space-y-3 dark:bg-[#141a2e] dark:border-white/10">
+        <form onSubmit={handleCreate} className="bg-white border border-primary-100/70 rounded-xl p-4 mb-6 space-y-3 dark:bg-[#17261f] dark:border-white/10">
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-medium text-slate-500 mb-1 dark:text-slate-400">Rule Name</label>
@@ -153,7 +153,7 @@ export default function RulesPage() {
         </form>
       )}
 
-      <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+      <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
         <table className="w-full text-sm">
           <thead className="bg-slate-50 text-slate-500 text-left dark:bg-white/5 dark:text-slate-400">
             <tr>

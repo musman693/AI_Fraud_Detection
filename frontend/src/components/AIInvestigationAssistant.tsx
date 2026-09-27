@@ -78,7 +78,7 @@ export default function AIInvestigationAssistant({
   }
 
   return (
-    <div className={compact ? "" : "bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none"}>
+    <div className={compact ? "" : "bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none"}>
       {title && (
         <div className="flex items-center gap-2 mb-1">
           <h2 className="font-semibold">{title}</h2>

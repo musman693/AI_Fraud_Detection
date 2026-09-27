@@ -56,7 +56,7 @@ export default function CustomerProfilePage() {
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+        <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
           <h2 className="font-semibold mb-3">Transaction History</h2>
           <ul className="divide-y divide-slate-100 text-sm max-h-96 overflow-y-auto dark:divide-white/5">
             {transactions.map((t) => (
@@ -69,7 +69,7 @@ export default function CustomerProfilePage() {
           </ul>
         </div>
 
-        <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+        <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
           <div className="flex items-center justify-between mb-1">
             <h2 className="font-semibold">Fraud Network</h2>
             <Link to={`/fraud-network/${customer.customer_id}`} className="text-xs text-primary-600 hover:underline">

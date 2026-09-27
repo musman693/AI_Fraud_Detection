@@ -57,7 +57,7 @@ function AddTransactionModal({ onClose, onCreated }: { onClose: () => void; onCr
 
   return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 dark:bg-[#141a2e] dark:shadow-none dark:border dark:border-white/10">
+      <div className="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 dark:bg-[#17261f] dark:shadow-none dark:border dark:border-white/10">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold">Add Transaction</h2>
           <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-xl leading-none dark:text-slate-500 dark:hover:text-slate-300">&times;</button>
@@ -255,7 +255,7 @@ export default function TransactionsPage() {
         <button className="bg-slate-200 px-4 py-2 rounded-lg text-sm dark:bg-white/10 dark:text-slate-200">Search</button>
       </form>
 
-      <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+      <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
         <table className="w-full text-sm">
           <thead className="bg-slate-50 text-slate-500 text-left dark:bg-white/5 dark:text-slate-400">
             <tr>

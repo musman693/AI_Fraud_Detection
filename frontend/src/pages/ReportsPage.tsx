@@ -77,7 +77,7 @@ function ExportButton({ exportType, params }: { exportType: string; params: Reco
 }
 
 function Panel({ children }: { children: React.ReactNode }) {
-  return <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">{children}</div>;
+  return <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">{children}</div>;
 }
 
 function EmptyRow({ colSpan, text }: { colSpan: number; text: string }) {
@@ -502,7 +502,7 @@ export default function ReportsPage() {
             className={`text-sm px-3 py-1.5 rounded-lg border ${
               tab === t.key
                 ? "bg-primary-600 text-white border-primary-600"
-                : "bg-white text-slate-700 border-primary-100/70 dark:bg-[#141a2e] dark:text-slate-300 dark:border-white/10"
+                : "bg-white text-slate-700 border-primary-100/70 dark:bg-[#17261f] dark:text-slate-300 dark:border-white/10"
             }`}
           >
             {t.label}

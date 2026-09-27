@@ -9,8 +9,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    APP_NAME: str = "FraudShield AI"
+    APP_NAME: str = "FraudSense"
     ENVIRONMENT: str = "development"
+    DEV_LOGIN_BYPASS: bool = False
 
     SECRET_KEY: str = "insecure-dev-secret-change-me"
     ALGORITHM: str = "HS256"

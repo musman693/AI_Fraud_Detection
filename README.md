@@ -1,4 +1,4 @@
-# FraudShield AI — Fraud & Risk Detection Platform
+# FraudSense — Fraud & Risk Detection Platform
 
 A full-stack, AI-powered fraud & risk detection platform: transaction ingestion,
 a configurable rules engine, ML anomaly detection (Isolation Forest), a risk

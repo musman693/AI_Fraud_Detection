@@ -4,6 +4,7 @@ import { useAuth } from "./hooks/useAuth";
 import type { UserRole } from "./types";
 
 import LoginPage from "./pages/LoginPage";
+import RoleSelectionPage from "./pages/RoleSelectionPage";
 import DashboardPage from "./pages/DashboardPage";
 import AdminDashboardPage from "./pages/AdminDashboardPage";
 import TransactionsPage from "./pages/TransactionsPage";
@@ -34,6 +35,7 @@ function RoleRoute({ roles, children }: { roles: UserRole[]; children: JSX.Eleme
 export default function App() {
   return (
     <Routes>
+      <Route path="/" element={<RoleSelectionPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route
         element={
@@ -84,9 +86,8 @@ export default function App() {
             </RoleRoute>
           }
         />
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
       </Route>
-      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

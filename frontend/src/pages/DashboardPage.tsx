@@ -36,11 +36,11 @@ export default function DashboardPage() {
   const { user } = useAuth();
   const { theme } = useTheme();
   const axisColor = theme === "dark" ? "#94a3b8" : "#64748b";
-  const gridColor = theme === "dark" ? "rgba(255,255,255,0.08)" : "#eef2f7";
+  const gridColor = theme === "dark" ? "rgba(255,255,255,0.08)" : "#e4ebe1";
   const tooltipStyle =
     theme === "dark"
-      ? { background: "#1a2140", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, color: "#e2e4f3" }
-      : { background: "#fff", border: "1px solid #f1f0fb", borderRadius: 12, color: "#1e1b3a" };
+      ? { background: "#17261f", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 12, color: "#e3ebe2" }
+      : { background: "#fff", border: "1px solid #e7eee1", borderRadius: 12, color: "#193c32" };
   const [summary, setSummary] = useState<DashboardSummary | null>(null);
   const [trend, setTrend] = useState<TrendPoint[]>([]);
   const [recentAlerts, setRecentAlerts] = useState<RecentAlert[]>([]);

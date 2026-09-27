@@ -12,7 +12,7 @@ const ENTITY_ICON_PATHS: Record<string, string> = {
 };
 
 const ENTITY_COLORS: Record<string, string> = {
-  Users: "#8b5cf6",
+  Users: "#b5d94e",
   Devices: "#2563eb",
   "IP Addresses": "#059669",
   Locations: "#ea580c",
@@ -77,7 +77,7 @@ export default function FraudRingHub({
               <svg x={x - 8} y={y - 8} width={16} height={16} viewBox="0 0 24 24">
                 <path d={iconPath} fill="none" stroke="white" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <circle cx={x + 13} cy={y - 13} r={9} className="fill-white dark:fill-[#141a2e]" stroke={color} strokeWidth={1.4} />
+              <circle cx={x + 13} cy={y - 13} r={9} className="fill-white dark:fill-[#17261f]" stroke={color} strokeWidth={1.4} />
               <text x={x + 13} y={y - 10} textAnchor="middle" fontSize={8.5} fontWeight={700} className="fill-slate-700 dark:fill-slate-100">
                 {e.count}
               </text>

@@ -78,7 +78,7 @@ export default function AppLayout() {
 
   function handleLogout() {
     logout();
-    navigate("/login");
+    navigate("/");
   }
 
   const visibleGroups = NAV_GROUPS.map((group) => ({
@@ -125,8 +125,8 @@ export default function AppLayout() {
   }
 
   return (
-    <div className="min-h-screen flex bg-[#f6f5fc] dark:bg-[#0b0e1c]">
-      <aside className="w-64 bg-[#0d1225] flex flex-col shrink-0">
+    <div className="h-dvh flex overflow-hidden bg-[#eef3ec] dark:bg-[#101b17]">
+      <aside className="h-dvh w-64 bg-[#153e33] flex flex-col shrink-0 overflow-hidden">
         <div className="px-5 py-6">
           <Logo size={38} light />
         </div>
@@ -180,8 +180,8 @@ export default function AppLayout() {
         </div>
       </aside>
 
-      <div className="flex-1 flex flex-col min-w-0">
-        <header className="h-16 shrink-0 flex items-center justify-between gap-4 px-6 bg-white/80 dark:bg-[#0f1428]/90 backdrop-blur border-b border-primary-100/60 dark:border-white/10">
+      <div className="h-dvh min-h-0 flex-1 flex flex-col min-w-0">
+        <header className="h-16 shrink-0 flex items-center justify-between gap-4 px-6 bg-white/80 dark:bg-[#14231d]/90 backdrop-blur border-b border-primary-100/60 dark:border-white/10">
           <div ref={searchRef} className="relative hidden sm:block w-full max-w-sm">
             <div className="flex items-center gap-2 bg-slate-100/80 dark:bg-white/5 rounded-xl px-3 py-2 text-slate-400 dark:text-slate-500 focus-within:ring-2 focus-within:ring-primary-300 dark:focus-within:ring-primary-500/40">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="shrink-0">
@@ -201,7 +201,7 @@ export default function AppLayout() {
               />
             </div>
             {searchOpen && searchQuery.trim() && (
-              <div className="absolute top-[calc(100%+6px)] left-0 right-0 bg-white dark:bg-[#141a2e] border border-primary-100/70 dark:border-white/10 rounded-xl shadow-soft overflow-hidden z-30 max-h-72 overflow-y-auto">
+              <div className="absolute top-[calc(100%+6px)] left-0 right-0 bg-white dark:bg-[#17261f] border border-primary-100/70 dark:border-white/10 rounded-xl shadow-soft overflow-hidden z-30 max-h-72 overflow-y-auto">
                 {searchMatches.length > 0 ? (
                   searchMatches.map((item) => (
                     <button
@@ -238,7 +238,7 @@ export default function AppLayout() {
           </div>
         </header>
 
-        <main className="flex-1 overflow-y-auto">
+        <main className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
           <div className="p-6 max-w-7xl mx-auto">
             <Outlet />
           </div>

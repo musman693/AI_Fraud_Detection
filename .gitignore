@@ -1,6 +1,12 @@
 backend/.env
 frontend/.env.local
 .env
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.sqlite3
+.pytest_cache/
 frontend/node_modules/
 frontend/dist/
 frontend/tsconfig.tsbuildinfo

@@ -30,7 +30,7 @@ export default function AlertsPage() {
           <Link
             key={a.id}
             to={`/alerts/${a.id}`}
-            className="bg-white border border-primary-100/70 rounded-xl p-4 flex items-center justify-between hover:shadow-sm dark:bg-[#141a2e] dark:border-white/10 dark:hover:shadow-none"
+            className="bg-white border border-primary-100/70 rounded-xl p-4 flex items-center justify-between hover:shadow-sm dark:bg-[#17261f] dark:border-white/10 dark:hover:shadow-none"
           >
             <div>
               <div className="font-medium">{a.title}</div>

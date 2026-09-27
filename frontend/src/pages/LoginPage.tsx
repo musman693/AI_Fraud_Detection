@@ -45,12 +45,12 @@ function ShieldGlyph() {
     >
       <defs>
         <linearGradient id="shield-glyph-grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#8b78f4" />
-          <stop offset="100%" stopColor="#67e8f9" />
+          <stop offset="0%" stopColor="#b5d94e" />
+          <stop offset="100%" stopColor="#75a94f" />
         </linearGradient>
         <radialGradient id="shield-glow" cx="50%" cy="45%" r="55%">
-          <stop offset="0%" stopColor="#6d56ef" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#6d56ef" stopOpacity="0" />
+          <stop offset="0%" stopColor="#b5d94e" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#b5d94e" stopOpacity="0" />
         </radialGradient>
       </defs>
       <circle cx="200" cy="190" r="170" fill="url(#shield-glow)" />
@@ -58,9 +58,9 @@ function ShieldGlyph() {
       {[
         [80, 90], [320, 110], [60, 260], [330, 250], [200, 40], [110, 330], [290, 330],
       ].map(([cx, cy], i) => (
-        <circle key={i} cx={cx} cy={cy} r="2.5" fill="#8fd9ff" opacity="0.7" />
+        <circle key={i} cx={cx} cy={cy} r="2.5" fill="#d4e99a" opacity="0.7" />
       ))}
-      <g opacity="0.35" stroke="#8b78f4" strokeWidth="1">
+      <g opacity="0.35" stroke="#b5d94e" strokeWidth="1">
         <line x1="80" y1="90" x2="200" y2="60" />
         <line x1="320" y1="110" x2="200" y2="60" />
         <line x1="60" y1="260" x2="110" y2="330" />
@@ -90,7 +90,7 @@ const FEATURES = [
   {
     label: "Real-time\nMonitoring",
     icon: (
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="#c7b6ff">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="#d4e99a">
         <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" />
       </svg>
     ),
@@ -98,7 +98,7 @@ const FEATURES = [
   {
     label: "Smarter\nInvestigations",
     icon: (
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#9fd0ff" strokeWidth="1.8">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#b5d94e" strokeWidth="1.8">
         <path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" />
         <path d="M9 12l2 2 4-4" />
       </svg>
@@ -107,7 +107,7 @@ const FEATURES = [
   {
     label: "Safer\nTransactions",
     icon: (
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#c7b6ff" strokeWidth="2.2" strokeLinecap="round">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d4e99a" strokeWidth="2.2" strokeLinecap="round">
         <path d="M4 20V10M11 20V4M18 20v-7" />
       </svg>
     ),
@@ -149,7 +149,7 @@ export default function LoginPage() {
             <br />
             detection,
             <br />
-            <span className="bg-gradient-to-r from-primary-400 to-cyan-300 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary-400 to-primary-200 bg-clip-text text-transparent">
               in real time.
             </span>
           </h1>
@@ -233,7 +233,7 @@ export default function LoginPage() {
       </div>
 
       <p className="absolute left-6 md:left-16 bottom-8 text-slate-500 text-xs z-10">
-        © {new Date().getFullYear()} FraudShield AI
+        © {new Date().getFullYear()} FraudSense
       </p>
     </div>
   );

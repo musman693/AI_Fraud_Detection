@@ -48,7 +48,7 @@ export default function TransactionDetailPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+        <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
           <h2 className="font-semibold mb-3">Details</h2>
           <dl className="text-sm divide-y divide-slate-100 dark:divide-white/5">
             {rows.map(([label, value]) => (
@@ -60,7 +60,7 @@ export default function TransactionDetailPage() {
           </dl>
         </div>
 
-        <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+        <div className="bg-white rounded-xl shadow-card border border-primary-100/70 p-4 dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
           <h2 className="font-semibold mb-3">AI Explanation</h2>
           <pre className="whitespace-pre-wrap text-sm text-slate-700 font-sans dark:text-slate-300">{explanation || "No explanation generated (low risk)."}</pre>
         </div>

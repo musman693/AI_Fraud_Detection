@@ -9,7 +9,7 @@ const THEME: Record<StatColor, { bg: string; text: string; spark: string; bar: s
   red: { bg: "bg-red-50 dark:bg-red-500/10", text: "text-red-600 dark:text-red-400", spark: "#dc2626", bar: "bg-red-500" },
   amber: { bg: "bg-amber-50 dark:bg-amber-500/10", text: "text-amber-600 dark:text-amber-400", spark: "#d97706", bar: "bg-amber-500" },
   pink: { bg: "bg-pink-50 dark:bg-pink-500/10", text: "text-pink-600 dark:text-pink-400", spark: "#db2777", bar: "bg-pink-500" },
-  violet: { bg: "bg-violet-50 dark:bg-violet-500/10", text: "text-violet-600 dark:text-violet-400", spark: "#7c3aed", bar: "bg-violet-500" },
+  violet: { bg: "bg-primary-50 dark:bg-primary-500/10", text: "text-primary-600 dark:text-primary-400", spark: "#1f5544", bar: "bg-primary-500" },
   teal: { bg: "bg-teal-50 dark:bg-teal-500/10", text: "text-teal-600 dark:text-teal-400", spark: "#0d9488", bar: "bg-teal-500" },
   emerald: { bg: "bg-emerald-50 dark:bg-emerald-500/10", text: "text-emerald-600 dark:text-emerald-400", spark: "#059669", bar: "bg-emerald-500" },
   indigo: { bg: "bg-indigo-50 dark:bg-indigo-500/10", text: "text-indigo-600 dark:text-indigo-400", spark: "#4f46e5", bar: "bg-indigo-500" },

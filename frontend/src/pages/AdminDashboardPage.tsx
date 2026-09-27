@@ -20,7 +20,7 @@ import type {
   SuspiciousFingerprint,
 } from "../types";
 
-const RISK_LINE_COLORS: Record<string, string> = { low: "#10b981", medium: "#f59e0b", high: "#ef4444", confirmed: "#7c3aed" };
+const RISK_LINE_COLORS: Record<string, string> = { low: "#75a94f", medium: "#f59e0b", high: "#ef4444", confirmed: "#1f5544" };
 
 const STATUS_META: Record<AlertStatus, { label: string; pill: string }> = {
   NEW: { label: "New", pill: "bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400" },
@@ -37,7 +37,7 @@ const SEVERITY_PILL: Record<string, string> = {
   CRITICAL: "bg-red-100 text-red-700 dark:bg-red-500/20 dark:text-red-300",
 };
 
-const RISK_FACTOR_COLORS = ["bg-red-500", "bg-amber-500", "bg-blue-500", "bg-violet-500", "bg-slate-400"];
+const RISK_FACTOR_COLORS = ["bg-red-500", "bg-amber-500", "bg-blue-500", "bg-primary-500", "bg-slate-400"];
 
 const ICONS = {
   transactions: "M3 10h18M7 15h1m4 0h5M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z",
@@ -123,7 +123,7 @@ function CustomTrendTooltip({ active, payload, label }: any) {
   const denom = high + medium + get("low") || 1;
   const avgScore = ((avgTotal / denom) * 20).toFixed(1);
   return (
-    <div className="bg-white dark:bg-[#1a2140] border border-slate-100 dark:border-white/10 rounded-xl shadow-soft px-4 py-3 text-xs min-w-[170px]">
+    <div className="bg-white dark:bg-[#17261f] border border-slate-100 dark:border-white/10 rounded-xl shadow-soft px-4 py-3 text-xs min-w-[170px]">
       <div className="font-semibold text-slate-700 dark:text-slate-200 mb-2">{label}</div>
       <div className="space-y-1.5">
         <div className="flex items-center justify-between gap-6">
@@ -188,7 +188,7 @@ function HeaderDropdown<T extends string>({
         className={`flex items-center gap-2 text-sm font-semibold px-3 py-2 rounded-xl border shadow-card transition-colors ${
           emphasize
             ? "bg-primary-50 border-primary-200 text-primary-700 dark:bg-primary-500/15 dark:border-primary-500/40 dark:text-primary-300"
-            : "bg-white border-primary-100/70 text-slate-600 dark:bg-[#141a2e] dark:border-white/10 dark:text-slate-200"
+            : "bg-white border-primary-100/70 text-slate-600 dark:bg-[#17261f] dark:border-white/10 dark:text-slate-200"
         }`}
       >
         {currentLabel}
@@ -207,7 +207,7 @@ function HeaderDropdown<T extends string>({
         </svg>
       </button>
       {open && (
-        <div className="absolute right-0 top-[calc(100%+6px)] min-w-[180px] bg-white dark:bg-[#141a2e] border border-primary-100/70 dark:border-white/10 rounded-xl shadow-soft p-1.5 z-30">
+        <div className="absolute right-0 top-[calc(100%+6px)] min-w-[180px] bg-white dark:bg-[#17261f] border border-primary-100/70 dark:border-white/10 rounded-xl shadow-soft p-1.5 z-30">
           {options.map((opt) => (
             <button
               key={opt.value}
@@ -232,7 +232,7 @@ function HeaderDropdown<T extends string>({
 }
 
 export default function AdminDashboardPage() {
-  const [range, setRange] = useState<QuickRange>("30d");
+  const [range, setRange] = useState<QuickRange>("all");
   const [dateFrom, setDateFrom] = useState<string>("");
   const [dateTo, setDateTo] = useState<string>("");
   const [refreshTick, setRefreshTick] = useState(0);
@@ -473,7 +473,7 @@ export default function AdminDashboardPage() {
           />
           <button
             onClick={() => setRefreshTick((n) => n + 1)}
-            className="flex items-center gap-1.5 text-sm font-semibold px-3 py-2 rounded-xl bg-white dark:bg-[#141a2e] dark:text-slate-200 border border-primary-100/70 dark:border-white/10 text-slate-600 hover:text-primary-600 hover:border-primary-200 shadow-card transition-colors"
+            className="flex items-center gap-1.5 text-sm font-semibold px-3 py-2 rounded-xl bg-white dark:bg-[#17261f] dark:text-slate-200 border border-primary-100/70 dark:border-white/10 text-slate-600 hover:text-primary-600 hover:border-primary-200 shadow-card transition-colors"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={loading ? "animate-spin" : ""}>
               <path d={ICONS.refresh} />

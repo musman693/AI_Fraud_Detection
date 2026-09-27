@@ -14,7 +14,7 @@ export default function CustomersPage() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6">Customer Risk Profiles</h1>
-      <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden dark:bg-[#141a2e] dark:border-white/10 dark:shadow-none">
+      <div className="bg-white rounded-xl shadow-card border border-primary-100/70 overflow-hidden dark:bg-[#17261f] dark:border-white/10 dark:shadow-none">
         <table className="w-full text-sm">
           <thead className="bg-slate-50 text-slate-500 text-left dark:bg-white/5 dark:text-slate-400">
             <tr>

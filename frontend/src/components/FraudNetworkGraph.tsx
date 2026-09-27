@@ -6,7 +6,7 @@ export const NODE_COLORS: Record<string, string> = {
   customer: "#0f172a",
   device: "#2563eb",
   ip: "#059669",
-  transaction: "#7c3aed",
+  transaction: "#75a94f",
   location: "#ea580c",
 };
 
