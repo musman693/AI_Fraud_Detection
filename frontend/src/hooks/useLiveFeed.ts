@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { isDemoMode } from "../services/api";
 
 export interface LiveTransactionEvent {
   type: "transaction.scored";
@@ -30,6 +31,8 @@ export function useLiveFeed(onEvent: (event: LiveTransactionEvent) => void) {
   onEventRef.current = onEvent;
 
   useEffect(() => {
+    if (isDemoMode) return;
+
     const token = localStorage.getItem("fraudshield_token");
     if (!token) return;
 
@@ -38,8 +41,12 @@ export function useLiveFeed(onEvent: (event: LiveTransactionEvent) => void) {
     let cancelled = false;
 
     function connect() {
-      const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
-      socket = new WebSocket(`${protocol}//${window.location.host}/ws/live?token=${encodeURIComponent(token!)}`);
+      const defaultBase = `${window.location.protocol}//${window.location.host}`;
+      const websocketBase = (import.meta.env.VITE_WS_BASE_URL || defaultBase)
+        .replace(/^https:/, "wss:")
+        .replace(/^http:/, "ws:")
+        .replace(/\/+$/, "");
+      socket = new WebSocket(`${websocketBase}/ws/live?token=${encodeURIComponent(token!)}`);
 
       socket.onmessage = (msg) => {
         try {
