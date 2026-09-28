@@ -1,10 +1,11 @@
 import axios from "axios";
 import { demoApiAdapter } from "./demoApi";
 
-export const isDemoMode = import.meta.env.VITE_DEMO_MODE === "true";
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+export const isDemoMode = import.meta.env.VITE_DEMO_MODE === "true" || (import.meta.env.PROD && !apiBaseUrl);
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "/api",
+  baseURL: apiBaseUrl || "/api",
   adapter: isDemoMode ? demoApiAdapter : undefined,
 });
 
